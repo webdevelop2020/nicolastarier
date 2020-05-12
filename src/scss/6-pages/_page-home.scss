@@ -47,3 +47,121 @@
     background-size: 100% 200%;
     background-position: center top;
 }
+
+main{
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 5%;
+    grid-gap: 5em;
+    margin-top: 50px;
+    overflow: hidden;
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: 5% 1fr 5%;
+        // background-color: #aaa;
+        grid-gap: 1em;
+        min-height: 100%;
+        overflow: hidden;
+    }
+
+    .portfolio{
+        @media only screen and (max-width: 768px) {
+            grid-column: 2/3;
+        }
+
+    }
+
+        .hero{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                transition: transform 0.3s ease-out;
+            }
+
+            .model-right{
+                transform: translate(0%, 10%);
+            }
+
+            .model-left{
+                transform: translate(0%, -10%);
+            }
+
+            &:hover .model-right{
+                transform: translate(0%, 0%);
+                
+            }
+
+            &:hover .model-left{
+                transform: translate(0%, 0%);
+                
+            }
+
+            &:hover{
+                box-shadow: 0px 10px 40px -16px rgba(224,224,224,1);
+            }
+        }
+
+        .details{
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: -10px;
+            left: 0;
+            margin: 0 auto;
+
+            h2{
+                display: inline-block;
+                font-size: 2em;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                @media only screen and (max-width: 1024px) {
+                    font-size: 1.5em;
+                }
+
+                &::before{
+                    position: relative;
+                    content: '';
+                    display: block;
+                    width: 120px;
+                    // border-top: 3px solid #dddddd;
+                    
+                }
+            }
+
+            .description{
+                font-size: 1em;
+                text-transform: uppercase;
+                text-align: left;
+                margin-left: 20px;
+                letter-spacing: 2px;
+                cursor: pointer;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    height: 60px;
+                    border-left: 3px solid #adadad;
+                    left: 0;
+                }
+
+            }
+        }
+
+        .portfolio:nth-child(odd){
+            grid-column: 2/3;
+        }
+        .portfolio:nth-child(even){
+            position: relative;
+            top: 100px;
+            @media only screen and (max-width: 768px) {
+                top: 0;
+            }
+        }
+}
