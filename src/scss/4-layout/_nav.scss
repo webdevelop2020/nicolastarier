@@ -1,0 +1,230 @@
+
+// Desktop Version
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+    align-items: center;
+    // position: fixed;
+    z-index: 100;
+    background-color: #fafafa;
+    margin: 0 auto;
+    width: 90%;
+    transition: .3s ease;
+    top: 0;
+    left: 0;
+    // border: 1px solid red;
+
+    .logo-wrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .logo-desc{
+            margin-left: 10px;
+            font-size: .95em;
+            letter-spacing: 2px;
+            span{
+                display: block;
+                font-size: .65em;
+                letter-spacing: .5;
+                color: grey;
+            }
+        }
+
+        .logo {
+            width: 80px;
+            cursor: pointer;
+        }
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+
+    .menu {
+        width: 20px;
+    }
+
+    .show-desktop {
+        display: block;
+    }
+    .hide-desktop {
+        display: none;
+    }
+
+    .button-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn{
+            display: inline-flex;   
+        }  
+    }
+
+    ul {
+        position: inherit;
+        width: auto;
+        height: auto;
+        background: none;
+
+        li {
+            float: left;
+            list-style-type: none;
+        
+            a {
+                color: #0D897F;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                padding: .5em 1em;
+                font-weight: 500;
+                overflow: hidden;
+                transition: 0.7s all;
+
+                &:hover {
+                color: rgb(19, 221, 204);
+
+                }
+
+
+                &::before{
+                    content: '';
+                    width: 0px;
+                    border-bottom: 2px solid #0D897F;
+                    position: absolute;
+                    top: 115px;
+                    transition: 0.7s all;
+                }
+
+                
+                &:hover::before {
+                    width: 40px;
+                }
+
+            }
+
+        }
+
+        .dropdown{
+            position: relative;
+            
+            ul{
+                display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    left: 0;
+                    
+                li{
+                    color: blueviolet;
+                    // border: 1px solid red;
+                    line-height: 1.5;
+                    
+                }
+            }
+        }
+    }
+}
+}
+
+// Nav Mobile Version
+
+@media only screen and (max-width: 768px) {
+
+.navigation {
+    padding: 40px 35px;
+    .logo-wrapper{
+
+        .logo {
+            width: 15%;
+            cursor: pointer;
+        }
+    
+    }
+    
+    nav{
+        
+        .menu {
+        width: 25px;
+        color: #0D897F;
+        }
+
+        a{
+            
+            svg{
+                
+                fill: #0D897F;
+                
+            }
+        }
+
+        .hide-mobile {
+            display: none;
+
+        }
+
+        .hide-desktop{
+            display: block;
+        }
+
+
+        ul {
+            position: fixed;
+            width: 60%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            text-align: left;
+            background-image: url(../../images/bg2.jpg);
+            z-index: 25;
+            padding-top: 5.3em;
+            padding-right: .5em;
+            list-style: none;
+            margin: 0;
+            
+            
+
+            li {
+                float: unset !important;
+                list-style-type: none;
+                
+                a{
+                    color: #000000;
+                    text-decoration: none;
+                    display: block;
+                    width: 100%;
+                    padding: 1em 1em;
+                    font-weight: 400;
+
+                    &:hover {
+                        background-color: inherit;
+                        opacity: .9;
+                        transition: .4s ease-in-out;
+                    }
+                }
+                
+            }
+                
+        }
+
+        .exit-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 3.95em 3.95em;
+            // background-color: #72cc60;
+
+            img {
+                width: 15px;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+}
