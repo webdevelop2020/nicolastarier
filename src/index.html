@@ -235,6 +235,22 @@
 	</div>
 
   <script src="./js/main.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script>
+    window.sr = ScrollReveal();
+    sr.reveal('.even',{
+      duration: 1000,
+      origin: 'left',
+      distance: '400px'
+    });
+    sr.reveal('.odd',{
+      duration: 1000,
+      origin: 'right',
+      distance: '400px'
+    });
+    sr.reveal('.foo', {duration: 1000})
+  </script>
 
 </body>
 </html>
